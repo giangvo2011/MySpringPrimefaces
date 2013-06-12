@@ -41,11 +41,18 @@
 		<aspectj.version>1.7.0.RC1</aspectj.version>
 		
 		<junit.version>4.10</junit.version>
+        <primefaces.version>3.5</primefaces.version>
 
 	</properties>
 
 	<!-- Dependencies -->
 	<dependencies>
+        <!-- Primefaces-->
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+        </dependency>
+
 		<!-- Hibernate & mysql connector -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -178,7 +185,14 @@
 	<!-- Dependency Management -->
 	<dependencyManagement>
 		<dependencies>
-			<!-- Hibernate & mysql connector -->
+            <!-- Primefaces-->
+            <dependency>
+                <groupId>org.primefaces</groupId>
+                <artifactId>primefaces</artifactId>
+                <version>${primefaces.version}</version>
+            </dependency>
+
+            <!-- Hibernate & mysql connector -->
 			<dependency>
 				<groupId>mysql</groupId>
 				<artifactId>mysql-connector-java</artifactId>
@@ -639,7 +653,15 @@
 			<name>JBoss Repo Public</name>
 			<url>http://repository.jboss.org/nexus/content/groups/public-jboss</url>
 		</repository>
-	</repositories>
+
+        <repository>
+            <id>prime-repo</id>
+            <name>PrimeFaces Maven Repository</name>
+            <url>http://repository.primefaces.org</url>
+            <layout>default</layout>
+        </repository>
+
+    </repositories>
 
 	<pluginRepositories>
 	
